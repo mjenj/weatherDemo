@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+<p> Welcome to the weather site </p>
+
+<form action="result" method="post">
+    {% csrf_token %}
+    <label for="address">Address for weather:</label>
+    <input type="text" id="address" name="address"><br><br>
+    <input type="submit" value="Submit">
+</form> 
+
+<br />
+
+<button type="button">Save result</button> 
+
+<a href="{% url 'history' %}" class="btn btn-info">View history</a>
+
+{% endblock %}

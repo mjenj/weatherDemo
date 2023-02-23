@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block content %}
+
+{% if request %}
+    <li>{{ request.address_text }} <br/> {{ request.request_date }}</li>
+{% else %}
+    <p>No requests made yet</p>
+{% endif %}
+
+
+{% endblock %}
