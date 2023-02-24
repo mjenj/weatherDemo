@@ -2,11 +2,20 @@
 
 {% block content %}
 
+<h1> History </h1>
+
 {% if weather_history %}
     <ul>
     {% for weather in weather_history %}
-    <li>{{ weather.request.address_text }} <br/> {{ weather.request.request_date }}</li>
-    <li>{{ weather.currentTemp }} <br/> {{ weather.maxTemp }}<br/> {{ weather.minTemp }}</li> 
+    <div class="card container-fluid">
+        <div class="card-body">
+            <h5 class="card-title">{{ weather.request.address_text }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ weather.request.request_date }}</h6>
+            <h6 class="">{{ weather.currentTemp }}&#176;C</h6>
+            <p class="card-text">{{ weather.maxTemp }}&#176;C / {{ weather.minTemp }}&#176;C</p>
+          </div>
+    </div>
+    <br />
     {% endfor %}
     </ul>
 {% else %}

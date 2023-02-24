@@ -1,16 +1,21 @@
 {% extends 'base.html'%}
 {% block content %}
-<p> Welcome to the weather site </p>
 
-<form action="result" method="post">
+<h1> Welcome to the weather site </h1>
+
+<br />
+<form action="result" method="post" class="align-center">
     {% csrf_token %}
     <label for="address">Address for weather:</label>
-    <input type="text" id="address" name="address"><br><br>
-    <input type="submit" value="Submit">
+    <input type="text" id="address" name="address" class="form-control form-control-lg" placeholder="e.g Cape Town"><br><br>
+    <input type="submit" value="Submit" class="btn btn-primary">
 </form> 
 
 <br />
 
-<a href="{% url 'history' %}" class="btn btn-info">View history</a>
+<a href="{% url 'history' %}" class="btn btn-info right">View history</a>
+
+<br />
+<iframe src="https://giphy.com/embed/za5xikuRr0OzK" width="480" height="270" frameBorder="0" class="" allowFullScreen></iframe><p></p>
 
 {% endblock %}

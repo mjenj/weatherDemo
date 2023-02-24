@@ -2,7 +2,7 @@
 {% block content %}
 <html>
     <head>
-        <title>An example</title>
+        <h1> Result </h1>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script>
             function save_data() {
@@ -14,11 +14,14 @@
     </head>
     <body>
         {% if weather and success%}
-            <li>{{ weather.request.address_text }} <br/> {{ weather.request.request_date }}</li>
-            <li>{{ weather.currentTemp }} <br/> {{ weather.maxTemp }}<br/> {{ weather.minTemp }}</li> 
-            <!-- <button onclick="save_data();">
-                Save to the DB
-            </button> -->
+        <div class="card container-fluid">
+            <div class="card-body">
+                <h5 class="card-title">{{ weather.request.address_text }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ weather.request.request_date }}</h6>
+                <h6 class="">{{ weather.currentTemp }}&#176;C</h6>
+                <p class="card-text">{{ weather.maxTemp }}&#176;C / {{ weather.minTemp }}&#176;C</p>
+              </div>
+        </div>
         {% elif not success %}
             <p> Error with request, no location found</p>
         {% else %}
