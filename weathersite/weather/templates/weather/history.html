@@ -2,10 +2,11 @@
 
 {% block content %}
 
-{% if requests %}
+{% if weather_history %}
     <ul>
-    {% for request in requests %}
-        <li>{{ request.address_text }} <br/> {{ request.request_date }}</li>
+    {% for weather in weather_history %}
+    <li>{{ weather.request.address_text }} <br/> {{ weather.request.request_date }}</li>
+    <li>{{ weather.currentTemp }} <br/> {{ weather.maxTemp }}<br/> {{ weather.minTemp }}</li> 
     {% endfor %}
     </ul>
 {% else %}

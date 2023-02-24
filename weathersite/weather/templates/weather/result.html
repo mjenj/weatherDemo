@@ -1,11 +1,30 @@
 {% extends 'base.html'%}
 {% block content %}
+<html>
+    <head>
+        <title>An example</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            function save_data() {
+                $.get('saveData', function (data) {
+                    alert("Data saved!");
+                });
+            }
+        </script>
+    </head>
+    <body>
+        {% if weather and success%}
+            <li>{{ weather.request.address_text }} <br/> {{ weather.request.request_date }}</li>
+            <li>{{ weather.currentTemp }} <br/> {{ weather.maxTemp }}<br/> {{ weather.minTemp }}</li> 
+            <!-- <button onclick="save_data();">
+                Save to the DB
+            </button> -->
+        {% elif not success %}
+            <p> Error with request, no location found</p>
+        {% else %}
+            <p>No requests made yet</p>
+        {% endif %}
 
-{% if request %}
-    <li>{{ request.address_text }} <br/> {{ request.request_date }}</li>
-{% else %}
-    <p>No requests made yet</p>
-{% endif %}
-
-
+    </body>
+</html>
 {% endblock %}
