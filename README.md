@@ -10,7 +10,8 @@ Requirements to run:
 - `pip3 install requests`
 - `pip3 install mysql-connector`
 
-Once downloaded run `python3 manage.py runserver` in 1 terminal \n
+Once downloaded run `python3 manage.py runserver` in 1 terminal
+
 Make sure the MySQL db is running with `mysql.server start`
 
 Credentials have been removed from the views.py file
