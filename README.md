@@ -1,6 +1,7 @@
 # weatherDemo
 Provide temprature data from an entered address
 
+This project was done over 4 afternoons
 
 Requirements to run:
 
